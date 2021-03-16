@@ -1,0 +1,18 @@
+About solution:
+1. This is a simple todolist webapplication written in GO and uses postgres DB.
+2. As a part of this terraform code, this application will be hosted on a docker platform 
+    running on an EC2 isntance and uses postgres DB hosted on RDS.
+3.  The solution also has autoscaling groups and a load balancer attached.
+4. Use the DNS of load balancer to access the application once the infra is provisioned.
+5. Please provide the KEY befiore running hte Terraform apply.
+
+
+Improvemnets for the solution which havent configured due to time contrainst:
+1. There is no build pipeline configured, hence a seperate EC2 instance is used in this case to build and push docker image before
+    provisioning the actual application infra.
+2. All the credentials have been exposed directly, would have used AWS secret manager to store the secrets and 
+    used it with Terraform or any other AWS SDK.
+3. HTTPS is not enabled
+4. Deploying the application on Kubernetes would be good for easy deployment of changes.
+5. Route53 can be enabled for route to a public domain or a nice domain private network.
+
